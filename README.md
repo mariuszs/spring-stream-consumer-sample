@@ -3,6 +3,7 @@ ParameterNamesModule is not autoregistered
 --
 
 
+```
 org.springframework.messaging.converter.MessageConversionException: Could not read JSON: Can not construct instance of com.example.streamconsumer.Foo: no suitable constructor found, can not deserialize from Object value (missing default constructor or creator, or perhaps need to add/enable type information?)
  at [Source: {"value":"bar"}; line: 1, column: 2]; nested exception is com.fasterxml.jackson.databind.JsonMappingException: Can not construct instance of com.example.streamconsumer.Foo: no suitable constructor found, can not deserialize from Object value (missing default constructor or creator, or perhaps need to add/enable type information?)
  at [Source: {"value":"bar"}; line: 1, column: 2]
@@ -71,3 +72,4 @@ Caused by: com.fasterxml.jackson.databind.JsonMappingException: Can not construc
 	at org.springframework.messaging.converter.MappingJackson2MessageConverter.convertFromInternal(MappingJackson2MessageConverter.java:223)
 	... 50 more
 
+```
