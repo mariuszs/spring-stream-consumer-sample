@@ -1,24 +1,25 @@
 package com.example.streamconsumer;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 public class Foo {
 
-    private final String value;
-    private final String dummy;
+	private final String value;
 
-    //FIXME: fails without @JsonProperty("value")
-    public Foo(String value, String dummy) {
-        this.value = value;
-        this.dummy = dummy;
-    }
+	// This is required for single property pojo https://github.com/FasterXML/jackson-module-parameter-names/issues/21
+	@JsonCreator(mode = JsonCreator.Mode.PROPERTIES)
+	public Foo(String value) {
+		this.value = value;
+	}
 
-    public String getValue() {
-        return value;
-    }
+	public String getValue() {
+		return value;
+	}
 
-    @Override
-    public String toString() {
-        return "Foo{" +
-                "value='" + value + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "Foo{" +
+				"value='" + value + '\'' +
+				'}';
+	}
 }
